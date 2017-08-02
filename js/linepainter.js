@@ -63,7 +63,6 @@ linePainter.prototype = {
         return 0 - diff * options.region.height / 2 / this.maxDiff; 
     },
     paintItem: function (i, x, y) {
-        console.trace();
         var ctx = this.ctx;
 
         if (i == 0) {
@@ -73,8 +72,8 @@ linePainter.prototype = {
         }
     },
     paintItemForBg: function(start, end){
-        this.ctx.lineTo(end.x, 100);
-        this.ctx.lineTo(start.x, 100);
+        this.ctx.lineTo(end.x, this.options.region.height-80);
+        this.ctx.lineTo(start.x, this.options.region.height-80);
     }
 };
 

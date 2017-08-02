@@ -320,7 +320,7 @@ minsChart.prototype = {
             if (me.canvas.tip) me.canvas.tip.dataContext = { data: data, isNewQuote: isNewQuote, index: index };
             var diff = val - preClose;
             var middleY = (me.minsChart.region.y + me.minsChart.region.height / 2);
-            console.log( me.maxDotsCount / me.minsChart.region.width );
+            // console.log( me.maxDotsCount / me.minsChart.region.width );
             return middleY - diff * me.minsChart.region.height / 2 / priceLinePainter.maxDiff;
         }
 
@@ -386,6 +386,7 @@ minsChart.prototype = {
 };
 
 var initialWidth = Math.min(screen.width,1024)-12;  // canvas 宽度
+var storkHeight = 160;
 var newCharConfig = {
 //* 241
     initialWidth: initialWidth,
@@ -394,16 +395,16 @@ var newCharConfig = {
     topText: { font: '12px 宋体', color: 'black', region: { x: 58.5, y: 5.5, width: 305, height: 14 }, textBaseline: 'top' },
     minsChart: {
         // region: { x: 56.5, y: 21.5, width: 310, height: 200 },
-        region: { x: 0, y: 21.5, width: initialWidth, height: 200 },
+        region: { x: 0, y: 21.5, width: initialWidth, height: storkHeight },
         priceLineColor: '#3F9DD5', avgPriceLineColor: 'red', middleLineColor: 'red', otherSplitLineColor: 'lightgray', borderColor: 'gray',
-        horizontalLineCount: 4, verticalLineCount: 3,
-        yScalerLeft: { font: '12px Arial', region: { x: .5, y: 20, width: 50.5, height: 200 }, align: 'right', fontHeight: 9, textBaseline: 'top' },
-        yScalerRight: { font: '12px Arial', region: { x: initialWidth - 40, y: 20, width: 40.5, height: 200 }, align: 'right', fontHeight: 9, textBaseline: 'top' }
+        horizontalLineCount: 3, verticalLineCount: 3,
+        yScalerLeft: { font: '12px Arial', region: { x: .5, y: 20, width: 50.5, height: storkHeight}, align: 'right', fontHeight: 9, textBaseline: 'top' },
+        yScalerRight: { font: '12px Arial', region: { x: initialWidth - 40, y: 20, width: 40.5, height: storkHeight }, align: 'right', fontHeight: 9, textBaseline: 'top' }
     },
     xScaler: {
         font: '12px Arial', color: 'black',
         // region: { x: 56.5, y: 225, width: 310, height: 20 },
-        region: { x: 0, y: 225, width: 310, height: 20 },
+        region: { x: 0, y: storkHeight+22 , width: 310, height: 20 },
         // data: ['09:30', '10:30', '11:30/13:00', '14:00', '15:00'] //*
         data: ['09:30']
     },
@@ -411,28 +412,54 @@ var newCharConfig = {
     //bottomText: { font: '11px 宋体', color: 'black', region: { x: 5.5, y: 260, width: 400, height: 20} },
     volume: {
         // region: { x: 56.5, y: 245.5, width: 310, height: 60 },
-        region: { x: 0, y: 245.5, width: initialWidth, height: 60 },
+        region: { x: 0, y: storkHeight+40, width: initialWidth, height: 44 },
         bar: { color: 'green', width: 2 },
         borderColor: 'lightgray', splitLineColor: 'lightgray',
-        yScaler: { font: '12px Arial', region: { x: .5, y: 242.5, width: 50.5, height: 60 }, color: 'black', align: 'right', fontHeight: 12, textBaseline: 'top' }
+        yScaler: { font: '12px Arial', region: { x: .5, y: storkHeight+40, width: 50.5, height: 40 }, color: 'black', align: 'right', fontHeight: 12, textBaseline: 'top' }
     }
 }
-var chart = new minsChart('canvas', newCharConfig);
 
-var data = getQuote();
+window.chart = null;
+window.fsdata = null;
 
-// chart.paint(data);
-// debugger;
 
-setTimeout(function(){
+function showChart(domId)
+{
 
-    data.mins.push( {price:2240.16,volume:21086600,amount:193157609} );
-    newCharConfig.maxDotsCount = data.mins.length;
-    var chart = new minsChart("canvas", newCharConfig);
-    chart.paint(data);
+    var c = document.getElementById("canvasFS");
+    if(c) c.remove();
+    c = document.createElement("canvas");
+    c.id = "canvasFS";
+    c.width = 414;
+    c.height = 250;
+    document.getElementById("fsWarp").appendChild(c);
 
-}, 1000);
+    document.getElementById("storeWarp").style.display = "none";
+    document.getElementById("chartLoading").style.display = "none";
+    /*<canvas id="canvasFS" width="414" height="250">
+        <p>你的浏览器不支持html5哟</p>
+    </canvas>*/
 
+
+    if( !window.chart )
+        chart = new minsChart(domId, newCharConfig);
+    /*if( !window.fsdata )
+        fsdata = getQuote();*/
+
+    // 获取数据
+    getFSData(kType, function(data){
+        window.fsdata = data;
+        var fsWarp = document.getElementById("fsWarp");
+        fsWarp.style.display = "block";
+
+        fsdata.mins.push( {price:2240.16,volume:21086600,amount:193157609} );
+        newCharConfig.maxDotsCount = fsdata.mins.length;
+        // var chart = new minsChart(domId, newCharConfig);
+        chart.paint(fsdata);
+
+    }.bind(window));
+
+}
 
 
 

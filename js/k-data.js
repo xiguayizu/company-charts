@@ -33,7 +33,12 @@ function getKLData(type, cb) {
         drawKL();
         result.ks = ks;
         cb(result);
-        return result;
+    }, "canvasKL", true);
+}
+function getFSData(type, cb) {
+    Ajax.get('/stork/get.php?k=fs', function(data){
+        data = JSON.parse(data.response);
+        cb(data);
     }, "canvasKL", true);
 }
 

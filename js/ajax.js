@@ -11,15 +11,19 @@ Ajax.request = function (method, url, callback, canvasId, showLoading) {
     var client = (window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : (window.XMLHttpRequest ? new XMLHttpRequest() : false));
     var canvas = document.getElementById(canvasId);
     if (canvas && showLoading) {
-        canvas.loadingObj = new loading(canvas);
+        // canvas.loadingObj = new loading(canvas);
 //setDebugMsg('canvas.loadingObj.show begin');
-        canvas.loadingObj.show();
+        // canvas.loadingObj.show();
 //setDebugMsg('canvas.loadingObj.show end');
+        document.getElementById("chartLoading").style.display = "block";
     }
     client.onreadystatechange = function () {
 //setDebugMsg('client.readyState = ' + client.readyState + ',client.status = ' + client.status);
         if (client.readyState == 4 && client.status == 200) {
-            if (canvas && showLoading) canvas.loadingObj.hide();
+            if (canvas && showLoading) {
+                // canvas.loadingObj.hide();
+                document.getElementById("chartLoading").style.display = "none";
+            }
             callback(client);
         }
 //setDebugMsg('finish callback');

@@ -1,0 +1,31 @@
+*{margin: 0px;padding: 0px;}
+canvas{margin-left: 2px;}
+#allStoreWarp{
+	z-index: 3; background: transparent;border: 1px solid #69c;
+	height: 250px;
+}
+.load-wrapp {
+	margin: 0 auto;
+	padding: 20px 20px 20px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: transparent;
+}
+@keyframes loadingC {
+0 {transform: translate(0,0);}
+50% {transform: translate(0,15px);}
+100% {transform: translate(0,0);}
+}
+.load-3 .line {height: 10px; width: 10px; background: red; display: inline-block;}
+.load-3 .line:nth-last-child(1) {animation: loadingC .6s .1s linear infinite;}
+.load-3 .line:nth-last-child(2) {animation: loadingC .6s .2s linear infinite;}
+.load-3 .line:nth-last-child(3) {animation: loadingC .6s .3s linear infinite;}
+#chartLoading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -80%);
+}
+#allStoreWarp{
+	position: relative;
+}

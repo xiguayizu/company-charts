@@ -19,27 +19,34 @@
 
 
 	<script src="js2/chartEventHelper.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="./css/store.css">
 
-	<!--<script src="js/k-data.js"></script>-->
-	<!-- <script src="js/store.js"></script> -->
-	<style>*{margin: 0px;padding: 0px;} canvas{margin-left: 2px;}</style>
 </head>
-<body onload="drawKL()" style="padding:0;margin:2px">
-	<span id="storeWarp">
-		<canvas id="canvasKL" width="984" height="250" style="z-index: 2; border: 1px solid #69c">
-		<p>
-			hey,您的浏览器不支持html5，换个浏览器吧，比如google chrome，firefox
-		</p>
-		</canvas>
-	</span>
+<!-- onload="drawKL()"-->
+<body style="padding:0;margin:2px">
 
-	<span id="fsWarp">
-		<canvas id="canvas" width="414" height="310" style="z-index: 3; background: transparent;
-        border: 1px solid #69c">
-			<p>
-				你的浏览器不支持html5哟</p>
-		</canvas>
-	</span>
+	<div id="allStoreWarp">
+		<span id="chartLoading">
+			<div class="load-wrapp">
+	            <div class="load-3">
+	                <div class="line"></div>
+	                <div class="line"></div>
+	                <div class="line"></div>
+	            </div>
+	        </div>
+		</span>
+		<span id="storeWarp" style="display: none;">
+			<canvas id="canvasKL" width="414" height="250">
+			<p>hey,您的浏览器不支持html5，换个浏览器吧，比如google chrome，firefox</p>
+			</canvas>
+		</span>
+
+		<span id="fsWarp" style="display: none;">
+			<canvas id="canvasFS" width="414" height="250">
+				<p>你的浏览器不支持html5哟</p>
+			</canvas>
+		</span>
+	</div>
 
 	<p></p>
 
@@ -48,13 +55,46 @@
 	<button onclick="select(2)">周k</button>
 	<button onclick="select(3)">月k</button>
 
+	<p></p>
+
 	<!-- k线 -->
     <script type="text/javascript" src="js/k-data.js"></script>
 	<script src="js/store.js"></script>
 
 	<!-- 分时 -->
-	<script src="./js2/mins-data.js"></script>
+	<!--<script src="./js2/mins-data.js"></script>-->
 	<script src="./js2/fsdraw.js"></script>
+
+	<script>
+		function select(k){
+			switch (k){
+				case 0:
+					painter = null;
+					kType = "fs";
+					showChart('canvasFS');
+					break;
+				case 1:
+					painter = null;
+					kType = "1day";
+					drawKL();
+					break;
+				case 2:
+					painter = null;
+					kType = "7day";
+					drawKL();
+					break;
+				case 3:
+					painter = null;
+					kType = "30day";
+					drawKL();
+					break;
+			}
+		}
+
+		setTimeout(function(){
+			select(0);
+		}, 1000);
+	</script>
     
 </div>
 </body>

@@ -618,9 +618,27 @@ kLine.prototype = {
 };
 var painter;// = new Painter('canvasKL', kl, data);
 var kType = ''; // 1day  7day
-var initialWidth = Math.min(screen.width,1024)-40;
+// var initialWidth = Math.min(screen.width,1024)-40;
 var initialWidth = Math.min(screen.width,1024)-12;  // canvas 宽度
-function drawKL(ranges) {
+function drawKL(ranges)
+{
+    document.getElementById("chartLoading").style.display = "none";
+    var oFs = document.getElementById("canvasFS");
+    if( oFs ){
+        oFs.remove();
+    }
+
+    if( !ranges ){
+        document.getElementById('storeWarp').style.display = 'block';
+        document.querySelector('#canvasKL').remove();
+        var canvas = document.createElement("canvas");
+        canvas.id = "canvasKL";
+        canvas.width="984";
+        canvas.height="250";
+        canvas.style="z-index: 2; border: 1px solid #69c";
+        document.querySelector("#storeWarp").appendChild(canvas);
+    }
+
     var kOptions = {
         backgroundColor:'#fff',
         riseColor: '#F11200',
@@ -707,33 +725,6 @@ function drawKL(ranges) {
 
 
 
-function select(k){
 
-    document.querySelector('#canvasKL').remove();
-    var canvas = document.createElement("canvas");
-    canvas.id = "canvasKL";
-    canvas.width="984";
-    canvas.height="390";
-    canvas.style="z-index: 2; border: 1px solid #69c";
-    document.querySelector("#storeWarp").appendChild(canvas);
-
-    switch (k){
-        case 1:
-            painter = null;
-            kType = "1day";
-            drawKL();
-            break;
-        case 2:
-            painter = null;
-            kType = "7day";
-            drawKL();
-            break;
-        case 3:
-            painter = null;
-            kType = "30day";
-            drawKL();
-            break;
-    }
-}
 
 
