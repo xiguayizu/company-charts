@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/absPainter.js"></script>
+	<script src="js/ajax.js"></script>
+	<script src="js/axis-x.js"></script>
+	<script src="js/axis-y.js"></script>
+	<script src="js/chartEventHelper.kl.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/crossLines.js"></script>
+	<script src="js/linepainter.js"></script>
+	<script src="js/loading.js"></script>
+	<script src="js/tip.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/volumePainter.js"></script>
+
+
+	<script src="js2/chartEventHelper.js" type="text/javascript"></script>
+
+	<!--<script src="js/k-data.js"></script>-->
+	<!-- <script src="js/store.js"></script> -->
+	<style>*{margin: 0px;padding: 0px;} canvas{margin-left: 2px;}</style>
+</head>
+<body onload="drawKL()" style="padding:0;margin:2px">
+	<span id="storeWarp">
+		<canvas id="canvasKL" width="984" height="250" style="z-index: 2; border: 1px solid #69c">
+		<p>
+			hey,您的浏览器不支持html5，换个浏览器吧，比如google chrome，firefox
+		</p>
+		</canvas>
+	</span>
+
+	<span id="fsWarp">
+		<canvas id="canvas" width="414" height="310" style="z-index: 3; background: transparent;
+        border: 1px solid #69c">
+			<p>
+				你的浏览器不支持html5哟</p>
+		</canvas>
+	</span>
+
+	<p></p>
+
+	<button onclick="select(0)">分时</button>
+	<button onclick="select(1)">日k</button>
+	<button onclick="select(2)">周k</button>
+	<button onclick="select(3)">月k</button>
+
+	<!-- k线 -->
+    <script type="text/javascript" src="js/k-data.js"></script>
+	<script src="js/store.js"></script>
+
+	<!-- 分时 -->
+	<script src="./js2/mins-data.js"></script>
+	<script src="./js2/fsdraw.js"></script>
+    
+</div>
+</body>
+</html>
