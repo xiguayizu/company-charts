@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aa7c2b06-eeb4-4951-8cfe-4b6991884927" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get.php" afterPath="$PROJECT_DIR$/get.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax.js" afterPath="$PROJECT_DIR$/js/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/k-data.js" afterPath="$PROJECT_DIR$/js/k-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/linepainter.js" afterPath="$PROJECT_DIR$/js/linepainter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/store.js" afterPath="$PROJECT_DIR$/js/store.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js2/fsdraw.js" afterPath="$PROJECT_DIR$/js2/fsdraw.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store.html" afterPath="$PROJECT_DIR$/store.html" />
     </list>
@@ -34,8 +29,8 @@
       <file leaf-file-name="store.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/store.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="220">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -68,8 +63,8 @@
       <file leaf-file-name="fsdraw.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js2/fsdraw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="303" column="33" selection-start-line="303" selection-start-column="33" selection-end-line="303" selection-end-column="33" />
+            <state relative-caret-position="874">
+              <caret line="507" column="9" selection-start-line="507" selection-start-column="9" selection-end-line="507" selection-end-column="9" />
               <folding>
                 <element signature="e#2695#2791#0" expanded="false" />
                 <element signature="e#12268#13957#0" expanded="false" />
@@ -381,12 +376,12 @@
       <workItem from="1500530882428" duration="6851000" />
       <workItem from="1500604356775" duration="20314000" />
       <workItem from="1500857897791" duration="1788000" />
-      <workItem from="1501641706955" duration="13686000" />
+      <workItem from="1501641706955" duration="14628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70840000" />
+    <option name="totallyTimeSpent" value="71782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="-9" width="1860" height="1084" extended-state="0" />
@@ -885,17 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js2/fsdraw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="303" column="33" selection-start-line="303" selection-start-column="33" selection-end-line="303" selection-end-column="33" />
-          <folding>
-            <element signature="e#2695#2791#0" expanded="false" />
-            <element signature="e#12268#13957#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/store.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -912,10 +896,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js2/fsdraw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="507" column="9" selection-start-line="507" selection-start-column="9" selection-end-line="507" selection-end-column="9" />
+          <folding>
+            <element signature="e#2695#2791#0" expanded="false" />
+            <element signature="e#12268#13957#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

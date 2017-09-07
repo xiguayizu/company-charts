@@ -1,7 +1,19 @@
 ﻿
+console.log('~~');
+
 var data = [];
 function getKLData(type, cb) {
     type = !!type ? type : '1day';
+
+    debugger;
+    switch(type){
+    	case 'label_1':
+    		break;
+    	default:
+    		
+    		break;
+    }
+
     Ajax.get('/stork/get.php?k='+type, function(data){
         // debugger;
         data = JSON.parse(data.response);
@@ -35,10 +47,39 @@ function getKLData(type, cb) {
         cb(result);
     }, "canvasKL", true);
 }
-function getFSData(type, cb) {
+function getFSData(type, cb, ) {
     Ajax.get('/stork/get.php?k=fs', function(data){
         data = JSON.parse(data.response);
         cb(data);
     }, "canvasKL", true);
 }
 
+function select(k){
+	window.getId = [234];
+    switch (k){
+        case 0:
+            painter = null;
+            kType = "fs";
+            showChart('canvasFS');
+            break;
+        case 1:
+            painter = null;
+            kType = "1day";
+            drawKL();
+            break;
+        case 2:
+            painter = null;
+            kType = "7day";
+            drawKL();
+            break;
+        case 3:
+            painter = null;
+            kType = "30day";
+            drawKL();
+            break;
+    }
+}
+
+setTimeout(function(){
+    select(0);
+}, 1000);

@@ -21,7 +21,7 @@ function convertDate(val, withWeek) {
         var weekNames = ['日', '一', '二', '三', '四', '五', '六'];
         return year + '-' + month + '-' + day + '(星期' + weekNames[d.getDay()] + ')';
     }
-
+    
     if( val.toString().length > 8 ){
         //  return month + '-' + day + '-' + hour;
     }else{

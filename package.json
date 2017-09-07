@@ -1,0 +1,36 @@
+{
+  "name": "stork",
+  "version": "1.0.0",
+  "description": "stork",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-less": "^3.3.2",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1"
+  },
+  "scripts": {
+    "test": "gulp default",
+    "build": "gulp minifyjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://xiguayizu:zhangpeng88@github.com/xiguayizu/company-charts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiguayizu/company-charts/issues"
+  },
+  "homepage": "https://github.com/xiguayizu/company-charts#readme"
+}
